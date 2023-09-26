@@ -63,6 +63,8 @@ Route::group(['middleware' => 'auth'], function(){
     Route::get('/profile/{id}/followers', [ProfileController::class, 'followers'])->name('profile.followers');
     // this route will serve the views>users>profile>following.blade.php
     Route::get('/profile/{id}/following', [ProfileController::class, 'following'])->name('profile.following');
+    // this route will update the login user's password
+    Route::patch('/profile/updatePassword', [ProfileController::class, 'updatePassword'])->name('profile.updatePassword');
 
     // this route will save a like 
     Route::post('/like/{post_id}/store',[LikeController::class, 'store'])->name('like.store');

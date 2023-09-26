@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\User;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Hash;
 
 class ProfileController extends Controller
 {
@@ -58,6 +59,38 @@ class ProfileController extends Controller
     public function following($id) {
         $user = $this->user->findOrFail($id);
         return view('users.profile.following')->with('user', $user);
+    }
+
+    public function updatePassword(Request $request)
+    {
+        /**
+         * This will pass the current_password_error displayed in the view via the session
+         */
+        if (!(Hash::check($request->get('current_password'), Auth::user()->password))) {
+            return redirect()->back()->with('current_password_error', 'Your current password does not match with what you provided');
+        }
+ 
+          /**
+           * This will pass the new_password_error displayed in the view via the session
+           */
+
+        if (strcmp($request->get('current_password'), $request->get('new_password')) == 0) {
+            return redirect()->back()->with('new_password_error', 'Your current password cannot be the same as your new password');
+        }
+
+        $request->validate([
+            'current_password' => 'required|string|min:8|max:50',
+            'new_password' => 'required|string|min:8|max:50|confirmed',
+            //the field under validation must have a matching field of {field}_confirmation => new_password_confirmation
+        ]);
+
+        $user = $this->user->findOrFail(Auth::user()->id);
+
+        $user->password = Hash::make($request->get('new_password'));
+
+        $user->save();
+
+        return redirect()->route('profile.show', Auth::user()->id )->with('success_password', 'Your password has been updated successfully');
     }
 
 }

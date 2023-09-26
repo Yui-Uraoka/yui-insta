@@ -56,6 +56,65 @@
 
                 <button type="submit" class="btn btn-warning px-5">Save</button>
             </form>
+
+            {{-- change password --}}
+            <form action="{{ route('profile.updatePassword') }}" method="POST" class="bg-white shadow rounded-3 p-5 mt-5">
+                @csrf
+                @method('PATCH')
+                <h2 class=" fw-light mb-3 text-muted">Update Password</h2>
+                {{-- current password --}}
+                <div class="mb-3">
+                    <label for="current-password" class="form-label fw-bold">Current Password</label>
+                    <input type="password" name="current_password" id="current-password" class="form-control">
+
+                    {{-- error --}}
+                    @if (session('current_password_error'))
+                        <p class="text-danger small">
+                            {{ session('current_password_error') }}
+                        </p>
+                    @endif
+                    @error('current_password')
+                        <div class="text-danger small">
+                            {{ $message }}
+                        </div>
+                    @enderror
+                </div>
+                {{-- new password --}}
+                <div class="mb-3">
+                    <label for="new-password" class="form-label fw-bold">New Password</label>
+                    <input type="password" name="new_password" id="new-password" class="form-control" aria-describedby="password-info">
+
+                    <div id="password-info" class="form-text">
+                        Password must be at least 8 characters long and contains numbers and letters.
+                    </div>
+                    @if (session('new_password_error'))
+                        <p class="text-danger small">
+                            {{ session('new_password_error') }}
+                        </p>
+                    @endif
+
+                    {{-- error --}}
+                    @error('new_password')
+                        <div class="text-danger small">
+                            {{ $message }}
+                        </div>
+                    @enderror
+                </div>
+                {{-- confirm password --}}
+                <div class="mb-3">
+                    <label for="new-password-confirmation" class="form-label fw-bold">Confirm Password</label>
+                    <input type="password" name="new_password_confirmation" id="new-password-confirmation" class="form-control">
+                        
+                        {{-- error --}}
+                        @error('new_password_confirmation')
+                            <div class="text-danger small">
+                                {{ $message }}
+                            </div>
+                        @enderror
+                </div>
+                {{-- submit --}}
+                <button type="submit" class="btn btn-warning px-5">Update Password</button>
+            </form>
         </div>
    </div>
 @endsection
