@@ -26,7 +26,7 @@
                             </a>
                         </div>
                         {{-- name --}}
-                        <div class="col ps-0">
+                        <div class="col ps-0 text-truncate">
                             <a href="{{route('profile.show', $post->user->id)}}" class="text-decoration-none text-dark">{{$post->user->name}}</a>
                         </div>
                         {{-- ellipsis --}}
