@@ -94,8 +94,12 @@
                         </div>
                         {{-- number of likes --}}
                         <div class="col-auto px-0">
-                            <span class="fw-bold">{{$post->likes->count()}}</span>
+                            <button type="button" class="btn btn-sm shadow-none p-0" data-bs-toggle="modal" data-bs-target="#numberOfLikes-{{$post->id}}">
+                                <span class="fw-bold">{{$post->likes->count()}}</span>
+                            </button>
                         </div>
+                        {{-- include the modal here --}}
+                        @include('users.posts.contents.modals.likes')
                         {{-- post categories --}}
                         <div class="col text-end">
                             {{-- @foreach ($post->categoryPost as $category_post)

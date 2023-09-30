@@ -1,6 +1,6 @@
 <div class="row">
     {{-- image --}}
-    <div class="col-4">
+    <div class="col-lg-4 col-md-4 col-sm-12">
         @if($user->avatar)
             <img src="{{$user->avatar}}" alt="{{$user->name}}" class="img-thumbnail rounded-circle d-block mx-auto avatar-lg">
         @else
@@ -8,7 +8,7 @@
         @endif
     </div>
    
-    <div class="col-8">
+    <div class="col">
          {{-- name and buttons --}}
          <div class="row mb-3">
             <div class="col-auto">

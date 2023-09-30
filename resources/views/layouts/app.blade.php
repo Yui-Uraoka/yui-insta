@@ -135,13 +135,13 @@
                     @if(request()->is('admin/*'))
                         <div class="col-3">
                             <div class="list-group">
-                                <a href="{{route('admin.users')}}" class="list-group-item {{request()->is('admin/users')? 'active' : ''}}">
+                                <a href="{{route('admin.users')}}" class="list-group-item {{request()->is('admin/users')? 'active' : ''}} text-truncate">
                                     <i class="fa-solid fa-users"></i> Users
                                 </a>
-                                <a href="{{route('admin.posts')}}" class="list-group-item {{request()->is('admin/posts')? 'active' : ''}}">
+                                <a href="{{route('admin.posts')}}" class="list-group-item {{request()->is('admin/posts')? 'active' : ''}} text-truncate">
                                     <i class="fa-solid fa-newspaper"></i> Posts
                                 </a>
-                                <a href="{{route('admin.categories')}}" class="list-group-item {{request()->is('admin/categories')? 'active' : ''}}">
+                                <a href="{{route('admin.categories')}}" class="list-group-item {{request()->is('admin/categories')? 'active' : ''}} text-truncate">
                                     <i class="fa-solid fa-tags"></i> Categories
                                 </a>
                             </div>
