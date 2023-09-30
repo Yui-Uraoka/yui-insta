@@ -71,15 +71,27 @@
                                     <td>{{$category->categoryPost->count()}}</td>
                                     <td>{{date('d/m/Y', strtotime($category->updated_at))}}</td>
                                     <td>
-                                        <div class="d-flex justify-content-between align-items-center">
-                                            <button class="btn btn-outline-warning btn-sm me-2" data-bs-toggle="modal" data-bs-target="#edit-category-{{$category->id}}" title="Edit">
-                                                <i class="fa-solid fa-pen"></i>
-                                            </button>
-                                            <button class="btn btn-outline-danger btn-sm" data-bs-toggle="modal" data-bs-target="#delete-category-{{$category->id}}" title="Delete">
-                                                <i class="fa-solid fa-trash-can"></i>
-                                            </button>
+                                        <div class="row">
+                                            <div class="col-md-6 text-end">
+                                                <button class="btn btn-outline-warning btn-sm mb-2" data-bs-toggle="modal" data-bs-target="#edit-category-{{$category->id}}" title="Edit">
+                                                    <i class="fa-solid fa-pen"></i>
+                                                </button>
+                                            </div>
+                                            <div class="col-md-6 text-start">
+                                                <button class="btn btn-outline-danger btn-sm" data-bs-toggle="modal" data-bs-target="#delete-category-{{$category->id}}" title="Delete">
+                                                    <i class="fa-solid fa-trash-can"></i>
+                                                </button>
+                                            </div>
                                         </div>
                                     </td>
+                                    {{-- <td>
+                                        <button class="btn btn-outline-warning btn-sm me-2" data-bs-toggle="modal" data-bs-target="#edit-category-{{$category->id}}" title="Edit">
+                                            <i class="fa-solid fa-pen"></i>
+                                        </button>
+                                        <button class="btn btn-outline-danger btn-sm" data-bs-toggle="modal" data-bs-target="#delete-category-{{$category->id}}" title="Delete">
+                                            <i class="fa-solid fa-trash-can"></i>
+                                        </button>
+                                    </td> --}}
                                 </tr>
                                 {{-- include the modal here --}}
                                 @include('admin.categories.modal.action')
