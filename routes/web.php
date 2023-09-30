@@ -80,15 +80,19 @@ Route::group(['middleware' => 'auth'], function(){
         Route::get('/users', [UsersController::class, 'index'])->name('users');
         Route::delete('/users/{id}/deactivate', [UsersController::class, 'deactivate'])->name('users.deactivate');
         Route::patch('/users/{id}/activate', [UsersController::class, 'activate'])->name('users.activate');
+        Route::get('/users/search', [UsersController::class, 'search'])->name('users.search');
 
         Route::get('/posts', [PostsController::class, 'index'])->name('posts');
         Route::delete('/posts/{id}/hide', [PostsController::class, 'hide'])->name('posts.hide');
         Route::patch('/posts/{id}/unhide', [PostsController::class, 'unhide'])->name('posts.unhide');
+        Route::get('/posts/search', [PostsController::class, 'search'])->name('posts.search');
+
 
         Route::get('/categories', [CategoriesController::class, 'index'])->name('categories');
         Route::post('/categories/store', [CategoriesController::class, 'store'])->name('categories.store');
         Route::patch('/categories/{id}/update', [CategoriesController::class, 'update'])->name('categories.update');
         Route::delete('/categories/{id}/destroy', [CategoriesController::class, 'destroy'])->name('categories.destroy');
+        Route::get('/categories/search', [CategoriesController::class, 'search'])->name('categories.search');
     });
 });
 
