@@ -19,7 +19,7 @@
                 <div class="row">
                     <div class="col"></div>
                     <div class="col-lg-6 col-md-6 col-sm-12 float-end">
-                        <form action="{{route('admin.categories.search')}}" aria-labelledby="search-info" class="mb-2">
+                        <form action="#" aria-labelledby="search-info">
                             <div class="input-group">
                                 <input type="search" name="search" id="search" class="form-control" placeholder="Search categories">
                                 <button type="submit" class="btn btn-primary"><i class="fa-solid fa-magnifying-glass"></i></button>
@@ -28,30 +28,12 @@
                                 </a>
                             </div>
                         </form>
-                        {{-- <div id="search-info" class="form-text text-end mb-2">
-                            {{$all_categories->count()}} result(s) found
-                        </div> --}}
+                        <div id="search-info" class="form-text text-end mb-2">
+                            {{$categories->count()}} result(s) found
+                        </div>
                     </div>
                 </div>
-                {{-- <form action="{{route('admin.categories.store')}}" method="POST">
-                    @csrf
-                    <div class="row gx-2 mb-4">
-                        <div class="col-lg-11">
-                            <input type="text" name="name" id="name" class="form-control" placeholder="Add a categories..." autofocus>
-                        </div>
-                        <div class="col-auto text-end">
-                            <button type="submit" class="btn btn-primary">
-                                <i class="fa-solid fa-plus"></i> Add
-                            </button>
-                        </div> --}}
-                        {{-- error --}}
-                        {{-- @error('name')
-                            <p class="text-danger small">{{$message}}</p>
-                        @enderror
-                    </div>
-                </form> --}}
             </div>
-       
 
             <div class="row">
                 <div class="table-responsive col-lg-12 col-md-12">
@@ -64,7 +46,7 @@
                             <th></th>
                         </thead>
                         <tbody>
-                            @forelse($all_categories as $category)
+                            @forelse($categories as $category)
                                 <tr>
                                     <td>{{$category->id}}</td>
                                     <td class="text-dark">{{$category->name}}</td>
@@ -97,13 +79,12 @@
                                 <td></td>
                             </tr>
                         </tbody>
-                    </table>
+                    </table>                   
                 </div>
             </div>
+             {{-- <div class="d-flex justify-content-center">
+                        {{$categories->links()}}
+                    </div> --}}
         </div>
     </div>
-    <div class="d-flex justify-content-center">
-        {{$all_categories->links()}}
-    </div>
-
 @endsection

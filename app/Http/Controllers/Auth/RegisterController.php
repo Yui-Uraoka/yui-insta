@@ -79,7 +79,7 @@ class RegisterController extends Controller
         // dd($user);
         $details = [
             'name' => $user->name,
-            'app_url' => 'http://donna-insta-app-06c5ca165eff.herokuapp.com/'
+            'app_url' => 'http://yui-insta-app-d9e967f786ee.herokuapp.com/login'
         ];
         // dd('hello');
         // first argument: views.users.emails.register-confirmation

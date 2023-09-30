@@ -36,4 +36,12 @@ class UsersController extends Controller
         return redirect()->back();
     }
 
+    public function search(Request $request) {
+        $users = $this->user->withTrashed()
+            ->where('name', 'like', '%' . $request->search . '%')
+            ->orwhere('email', 'like', '%' . $request->search . '%')            
+            ->get();
+        return view('admin.users.search')->with('users',$users);
+    }
+
 }

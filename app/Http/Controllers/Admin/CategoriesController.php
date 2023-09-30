@@ -73,4 +73,15 @@ class CategoriesController extends Controller
         $this->category->destroy($id);
         return redirect()->back();
     }
+
+    public function search(Request $request) {
+        $categories = $this->category
+            ->where('name', 'like', '%' . $request->search . '%')          
+            ->get();
+        $uncategorized_count = $this->uncategorizedCount();
+        
+        return view('admin.categories.search')
+            ->with('categories',$categories)
+            ->with('uncategorized_count', $uncategorized_count);
+    }
 }

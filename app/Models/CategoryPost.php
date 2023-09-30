@@ -15,7 +15,7 @@ class CategoryPost extends Model
 
     // To get the details of the post
     public function post() {
-        return $this->belongsTo(Post::class);
+        return $this->belongsTo(Post::class)->withTrashed();
     }
 
     // To get the name of the category
