@@ -71,12 +71,14 @@
                                     <td>{{$category->categoryPost->count()}}</td>
                                     <td>{{date('d/m/Y', strtotime($category->updated_at))}}</td>
                                     <td>
-                                        <button class="btn btn-outline-warning btn-sm me-2" data-bs-toggle="modal" data-bs-target="#edit-category-{{$category->id}}" title="Edit">
-                                            <i class="fa-solid fa-pen"></i>
-                                        </button>
-                                        <button class="btn btn-outline-danger btn-sm" data-bs-toggle="modal" data-bs-target="#delete-category-{{$category->id}}" title="Delete">
-                                            <i class="fa-solid fa-trash-can"></i>
-                                        </button>
+                                        <div class="d-flex justify-content-between align-items-center">
+                                            <button class="btn btn-outline-warning btn-sm me-2" data-bs-toggle="modal" data-bs-target="#edit-category-{{$category->id}}" title="Edit">
+                                                <i class="fa-solid fa-pen"></i>
+                                            </button>
+                                            <button class="btn btn-outline-danger btn-sm" data-bs-toggle="modal" data-bs-target="#delete-category-{{$category->id}}" title="Delete">
+                                                <i class="fa-solid fa-trash-can"></i>
+                                            </button>
+                                        </div>
                                     </td>
                                 </tr>
                                 {{-- include the modal here --}}
