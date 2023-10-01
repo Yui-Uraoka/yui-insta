@@ -4,7 +4,7 @@
 
 @section('content')
    <div class="row justify-content-center">
-        <div class="col-8">
+    <div class="col-lg-8 col-md-12 col-sm-12">
             <form action="{{route('profile.update')}}" method="POST" class="bg-white shadow rounded-3 p-5" enctype="multipart/form-data">
                 @csrf
                 @method('PATCH')
