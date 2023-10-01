@@ -6,12 +6,12 @@
     <div class="row border shadow">
         {{-- LEFT SIDE --}}
     
-        <div class="col-lg-8 col-md-8 col-sm-6 p-0 border-end">
+        <div class="col p-0 border-end">
             <img src="{{$post->image}}" alt="post id {{$post->id}}" class="w-100">
         </div>
       
         {{-- RIGHT SIDE --}}
-        <div class="col px-0 bg-white right-side-col">
+        <div class="col-lg-4 col-md-4 col-sm-6 px-0 bg-white right-side-col">
             <div class="card border-0">
                 <div class="card-header bg-white py-3">
                     <div class="row align-items-center">
