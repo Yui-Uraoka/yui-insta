@@ -35,6 +35,21 @@ class CategorySeeder extends Seeder
                 'created_at' => now(),
                 'updated_at' => now()
             ],
+            [
+                'name' => 'Travel',
+                'created_at' => now(),
+                'updated_at' => now()
+            ],
+            [
+                'name' => 'Food',
+                'created_at' => now(),
+                'updated_at' => now()
+            ],
+            [
+                'name' => 'Lifestyle',
+                'created_at' => now(),
+                'updated_at' => now()
+            ],
         ];
 
         $this->category->insert($categories);

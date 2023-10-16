@@ -6,7 +6,7 @@
     @include('users.profile.header')
     @if($user->followers->isNotEmpty())
         <div class="row justify-content-center">
-            <div class="col-4">
+            <div class="col-lg-4 col-md-8 col-12">
                 <h3 class="text-muted text-center">Follower</h3>
                 @foreach ($user->followers as $follower)
                 <div class="row align-items-center mt-3">

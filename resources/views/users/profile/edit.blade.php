@@ -9,15 +9,15 @@
                 @csrf
                 @method('PATCH')
                 <h2 class="h3 mb-3 fw-light text-muted">Update Profile</h2>
-                <div class="row mb-3">
-                    <div class="col-auto">
+                <div class="row">
+                    <div class="col-auto mb-3">
                         @if($user->avatar)
                             <img src="{{$user->avatar}}" alt="{{$user->name}}" class="img-thumbnail rounded-circle d-block mx-auto avatar-lg">
                         @else
                             <i class="fa-solid fa-circle-user text-secondary d-block text-center icon-lg"></i>
                         @endif
                     </div>
-                    <div class="col-lg-8 col-md-8 col-sm-12 align-self-end">
+                    <div class="col-lg-8 col-md-8 col-sm-12 align-self-end mb-4">
                         <input type="file" name="avatar" id="avatar" class="form-control form-control-sm mt-1" aria-describedby="avatar-info">
                         <div id="avatar-info" class="form-text">
                             Accecptable formats: jpeg, jpg, png, gif only <br>

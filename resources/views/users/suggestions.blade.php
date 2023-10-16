@@ -4,7 +4,7 @@
 
 @section ('content')
     <div class="row justify-content-center">
-        <div class="col-6">
+        <div class="col-lg-6 col-md-8 col-12">
             <p class="fw-bold">Suggested</p>
             @forelse ($suggested_users as $user)
                     <div class="row align-item-center mb-3">
@@ -23,7 +23,7 @@
                             <a href="{{route('profile.show', $user->id)}}" class="text-decoration-none text-dark fw-bold">
                                 {{$user->name}}
                             </a>
-                            <div class="text-muted">{{$user->email}}</div>
+                            <div class="text-muted text-truncate">{{$user->email}}</div>
                             {{-- Followers' count --}}
                             @if($user->isFollowing())
                                 <div class="text-muted xsmall">

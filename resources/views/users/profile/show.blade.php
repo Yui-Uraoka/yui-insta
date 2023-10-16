@@ -5,7 +5,7 @@
 @section('content')
    @include('users.profile.header')
    {{-- Show all posts here --}}
-    <div style="margin-top:100px">
+    <div style="margin-top:50px">
         @if($user->posts->isNotEmpty())
             <div class="row">
                 @foreach ($user->posts as $post)
