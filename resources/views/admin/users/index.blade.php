@@ -117,66 +117,66 @@
         {{$all_users->links()}}
     </div>
 @endsection
-@extends('layouts.app')
+{{-- @extends('layouts.app')
 
 @section('title', 'Admin:Users')
 
 @section('content')
     <table class="table table-hover align-middle bg-white border text-secondary">
         <thead class="small table-success text-secondary">
-            <tr>
+            <tr> --}}
                 {{-- avatar --}}
-                <th></th>
+                {{-- <th></th>
                 <th>NAME</th>
                 <th>EMAIL</th>
                 <th>CREATED AT</th>
-                <th>STATUS</th>
+                <th>STATUS</th> --}}
                 {{-- ellipsis --}}
-                <th></th>
+                {{-- <th></th>
             </tr>
         </thead>
         <tbody>
             @foreach ($all_users as $user)
-                <tr>
+                <tr> --}}
                     {{-- image --}}
-                    <td>
+                    {{-- <td>
                         @if($user->avatar)
                             <img src="{{$user->avatar}}" alt="{{$user->name}}" class="rounded-circle d-block mx-auto avatar-md">
                         @else
                             <i class="fa-solid fa-circle-user d-block text-center icon-md"></i>
                         @endif
-                    </td>
+                    </td> --}}
                     {{-- Name --}}
-                    <td>
+                    {{-- <td>
                         <a href="{{route('profile.show', $user->id)}}" class="text-decoration-none text-dark fw-bold">{{$user->name}}</a>
-                    </td>
+                    </td> --}}
                     {{-- Email --}}
-                    <td>
+                    {{-- <td>
                         {{$user->email}}
-                    </td>
+                    </td> --}}
                     {{-- created at --}}
-                    <td>
+                    {{-- <td> --}}
                         {{-- {{date('l jS \of F Y h:i:s A', strtotime($user->created_at))}} --}}
-                        {{date('d/m/Y', strtotime($user->created_at))}}
-                    </td>
+                        {{-- {{date('d/m/Y', strtotime($user->created_at))}}
+                    </td> --}}
                     {{-- status --}}
-                    <td>
+                    {{-- <td> --}}
                         {{-- 
                             trashed() is to check if the user is softdeleted
                             this will check the deleted_at column in the users table
                             if the value = NULL, it will return FALSE
                             if the value = timestamp, it will return TRUE
                             --}}
-                        @if($user->trashed())
+                        {{-- @if($user->trashed())
                             <i class="fa-solid fa-circle text-secondary"></i>&nbsp;Inactive
                         @else
                             <i class="fa-solid fa-circle text-success"></i>&nbsp;Active
                         @endif
-                    </td>
+                    </td> --}}
                     {{-- ellipsis --}}
-                    <td>
+                    {{-- <td> --}}
                         {{--  --}}
-                        @if(Auth::user()->id !== $user->id)
+                        {{-- @if(Auth::user()->id !== $user->id)
                             <div class="dropdown">
                                 <button class="btn btn-sm" data-bs-toggle="dropdown">
                                     <i class="fa-solid fa-ellipsis"></i>
@@ -193,9 +193,9 @@
                                         </button>
                                     @endif
                                 </div>
-                            </div>
+                            </div> --}}
                             {{-- Include modal here --}}
-                            @include('admin.users.modal.status')
+                            {{-- @include('admin.users.modal.status')
                         @endif
                     </td>
                 </tr>
@@ -205,4 +205,4 @@
     <div class="d-flex justify-content-center">
         {{$all_users->links()}}
     </div>
-@endsection
+@endsection --}}
